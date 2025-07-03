@@ -1,38 +1,12 @@
-# sv
+# Repro for https://github.com/sveltejs/vite-plugin-svelte/issues/1157
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+1. Clone
+2. pnpm i
+3. pnpm dev
+4. Visit url printed in console.
 
-## Creating a project
+You should see something like the following warning:
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
 ```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+21:58:42 [vite-plugin-svelte] src/lib/Wrapper.svelte:10:62 No scopable elements found in template. If you're using global styles in the style tag, you should move it into an external stylesheet file and import it in JS. See https://github.com/sveltejs/vite-plugin-svelte/blob/main/docs/faq.md#where-should-i-put-my-global-styles.
 ```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
